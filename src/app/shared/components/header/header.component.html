@@ -1,0 +1,6 @@
+
+    <ul class="nav nav-pills">
+        <li *ngFor="let route of routes">
+            <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="route.route">{{route.description}}</a>  
+        </li>
+    </ul>

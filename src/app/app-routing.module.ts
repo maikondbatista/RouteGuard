@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './shared/authorization/auth.guard';
+import { AuthGuard } from './shared/services/auth.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
       import('./rota1/rota1.module').then(
         (m) => m.Rota1Module
       ),
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard]
   },
   {
     path: 'rota2',
@@ -32,6 +32,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./unauthorized/unauthorized.module').then(
         (m) => m.UnauthorizedModule
+      ),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./login/login.module').then(
+        (m) => m.LoginModule
       ),
   },
   { path: '**', redirectTo: 'home' } 

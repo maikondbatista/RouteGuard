@@ -1,6 +1,12 @@
-
-    <ul class="nav nav-pills">
-        <li *ngFor="let route of routes">
-            <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="route.route">{{route.description}}</a>  
-        </li>
-    </ul>
+<ul class="nav nav-pills">
+    <li *ngFor="let route of routes">
+        <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="route.route">{{route.description}}</a>  
+    </li>
+    <li>
+        <p class="user mt-2">{{(user$ | async)?.nome}}</p>
+    </li>
+    <li>
+        <a class="nav-link login-link" routerLinkActive="active" aria-current="page" routerLink="login">Login</a>  
+    </li>
+</ul>
+    

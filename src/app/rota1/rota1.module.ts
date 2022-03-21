@@ -10,7 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     Rota1Component,
-    DetalheComponent
+    DetalheComponent, 
   ],
   imports: [
     CommonModule,

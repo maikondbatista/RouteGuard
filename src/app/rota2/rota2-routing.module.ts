@@ -4,9 +4,9 @@ import { DetalheComponent } from './detalhe/detalhe.component';
 import { Rota2Component } from './rota2.component';
 
 const routes: Routes = [
-  { path: '**', component: Rota2Component },
   { path: 'detalhe', component: DetalheComponent},
   { path: 'detalhe/:id', component: DetalheComponent},
+  { path: '**', component: Rota2Component },
 ];
 
 @NgModule({

@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="col-md-12">
+    <form class="row" [formGroup]="form">
+        <div class="form-row">
+            <div class="col-md-4">
+            <label>Usuário</label>
+            <input type="text" class="form-control" formControlName="user">
+            </div>
+         </div>
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Senha</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mt-2">
+                <button type="button" class="btn btn-primary" (click)="login()">Entrar</button>
+            </div>
+        </div>
+    </form>
+</div>

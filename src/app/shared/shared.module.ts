@@ -1,29 +1,40 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
-import { AuthGuard } from "./authorization/auth.guard";
-import { AuthService } from "./services/auth.service";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { RouterModule } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
+import { ToastrModule, ToastrService } from "ngx-toastr";
+import { HttpClientModule } from "@angular/common/http";
+import { RotaBaseComponent } from './components/rota-base/rota-base.component';
+import { AuthGuard } from "./services/auth.guard";
 
-const SERVICES = [AuthGuard, AuthService];
+const SERVICES = [AuthGuard, ToastrService];
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RotaBaseComponent
   ],
   imports: [
     CommonModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
   exports: [
     CommonModule,
     HeaderComponent,
     FooterComponent,
     NgbModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    ToastrModule,
+    HttpClientModule,
+    RotaBaseComponent
   ],
 })
 export class SharedModule {
